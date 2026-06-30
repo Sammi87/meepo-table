@@ -48,6 +48,14 @@ export type Column<P extends CommonProps, T> = {
   editComponent?: EZComponent<P>;
   filter?: Filter[];
   getProps?: (data: T) => Partial<Omit<P, 'value'>>;
+  /**
+   * How this column's values should be compared when sorting.
+   * Defaults are provided per column type in columns.ts (e.g. dates by time,
+   * numbers numerically). When omitted, the sorter falls back to a
+   * locale-aware string comparison. Typed loosely because the cell value is
+   * itself `any` (see Cell) and the table erases columns to Column<CommonProps>.
+   */
+  compare?: (a: any, b: any) => number;
   header?: ComputedRef<string>;
   onClick?: ((args?: any) => void) | boolean;
   priority?: number;

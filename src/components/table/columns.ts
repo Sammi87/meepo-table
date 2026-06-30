@@ -7,7 +7,7 @@ import Fold from "@/components/cells/Fold.vue";
 import Checkbox from '@/components/cells/Checkbox.vue';
 import ContextButton from "@/components/cells/ContextButton.vue";
 import { AlignX } from '@/types/enums';
-import { uid } from '@/utils/generalUtils';
+import { uid, compareDates, compareNumbers } from '@/utils/generalUtils';
 import { Column, ColumnId, HeaderColumn, HeaderComponent, PartialColumn, SubTable } from '@/types/tableTypes';
 import { CheckboxProps, ChipProps, CommonProps, ContextButtonProps, DateProps, FoldProps, NumberProps, TextProps } from '@/types/cellTypes';
 import { computed, markRaw } from 'vue';
@@ -72,6 +72,7 @@ export const textColumn = <T>(props: PartialColumn<T, TextProps>): Column<TextPr
 export const numberColumn = <T>(props: PartialColumn<T, NumberProps>): Column<NumberProps, T>  => columnFn({
     getValue: (props: T) => undefined,
     header:  computed(() => 'Number'),
+    compare: compareNumbers,
     sortable: true,
     searchable: true,
     align: AlignX.RIGHT,
@@ -86,6 +87,7 @@ export const numberColumn = <T>(props: PartialColumn<T, NumberProps>): Column<Nu
 export const dateColumn = <T>(props: PartialColumn<T, DateProps>): Column<DateProps, T>  => columnFn({
     getValue: (props: T) => undefined,
     header:  computed(() => 'Date'),
+    compare: compareDates,
     sortable: true,
     searchable: true,
     align: AlignX.CENTER,
