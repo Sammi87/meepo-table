@@ -1,0 +1,64 @@
+{
+  "name": "ez-table",
+  "private": true,
+  "version": "0.8.10",
+  "description": "Data table",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/ez-table.umd.cjs",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/ez-table.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.com/meepoab/component-library/ezt.git"
+  },
+  "author": "@christian56 <christian@meepo.se>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/ez-table.js",
+      "require": "./dist/ez-table.umd.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "copy-style": "cp ./src/assets/styles/_ez-styles.scss ./dist",
+    "copy-mobile-style": "cp ./src/assets/styles/_ez-mobile.scss ./dist/_ez-mobile.scss",
+    "copy-tablet-style": "cp ./src/assets/styles/_ez-tablet.scss ./dist/_ez-tablet.scss",
+    "build": "vite build && npm run copy-mobile-style && npm run copy-tablet-style",
+    "preview": "vite preview",
+    "deploy-dist": "git checkout -B dist && git merge main && npm install && npm run build && mv dist/* . && rm -rf dist && rm -rf src && git add . && git commit -m 'Deploy dist to dist branch' && git push origin dist && git checkout main",
+    "check": "vue-tsc --noEmit",
+    "release-check": "echo $npm_package_version && echo $CI_COMMIT_TAG"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.24.0",
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.20.1",
+    "eslint": "^8.56.0",
+    "sass": "^1.71.1",
+    "typescript": "^5.3.3",
+    "vite-plugin-dts": "^3.7.3",
+    "vite": "^5.1.4",
+    "vue-component-type-helpers": "^2.0.4",
+    "vue-tsc": "^2.0.4"
+  }
+}

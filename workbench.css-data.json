@@ -1,0 +1,17 @@
+{
+  "properties": [
+    {
+      "name": "foo",
+      "description": "Foo property",
+      "browsers": ["E12", "S10", "C50", "IE10", "O37"],
+      "status": "standard",
+      "references": [
+        {
+          "name": "My foo property reference",
+          "url": "/Users/stengran/dev/ezt/workbench.main.css"
+        }
+      ],
+      "relevance": 25
+    }
+  ]
+}

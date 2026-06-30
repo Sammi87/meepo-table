@@ -1,0 +1,40 @@
+@mixin sub-table-transitions {
+  .table-enter-active,
+  .table-leave-active {
+    &.ez-sub-row {
+      transition:
+        transform .25s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity .25s linear,
+        height .375s cubic-bezier(0.22, 1, 0.36, 1),;
+    }
+    .ez-td {
+      overflow: hidden;
+      opacity: 1;
+      transition: 
+        transform .025s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity .25s linear,
+        height .375s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+  .table-move {
+    opacity: .75;
+    transition: all .15s;
+  }
+  .table-enter-from,
+  .table-leave-to {
+    .ez-td {
+      opacity: 0;
+      height: 0;
+      transform: translate(0, 100%);
+    }
+  }
+}
+
+@mixin colorStuff($steps, $deg) {
+  @for $i from 0 through $steps {
+    &:nth-child(#{$i}) {
+      background-color: hsl($deg * $i, 50%, 50%);
+    }
+  }
+}
+

@@ -1,0 +1,470 @@
+
+// LIGHT THEME
+@mixin light-theme() {
+  // table
+  --table-border-color: var(--p-500);
+
+  // th
+  --th-background-color: var(--p-700);
+  --th-background-color-hover: var(--p-600);
+  --th-color: var(--p-300);
+  --th-color-hover: var(--p-300);
+  --th-border-color: var(--table-border-color);
+  --th-sort-arrow-stroke: currentColor;
+  --th-ellipsis-fill: currentColor;
+
+  //td
+  --td-background-color: var(--n-900);
+  --td-background-color-hover: var(--n-800);
+  --td-color: var(--p-200);
+  --td-border-color: var(--table-border-color);
+
+  --td-edit-active: var(--n-900);
+
+  //context button
+  --table-context-button: var(--p-400);
+  --table-context-button-hover: var(--p-300);
+  --table-context-button-active: var(--p-400);
+  --table-context-button-bkg: transparent;
+  --table-context-button-bkg-hover: var(--p-800);
+  --table-context-button-bkg-active: var(--p-700);
+
+  //context menu
+  --context-menu-color: var(--p-200);
+  --context-menu-bkg: var(--w);
+  --context-menu-item-bkg-hover: hsl(0, 0%, 97%);
+
+  //checkbox
+  --table-checkbox-color: var(--p-400);
+  --table-checkbox-hover-color: var(--p-300);
+
+  //fold arrow
+  --fold-icon-color: var(--p-400);
+
+  //subrow
+  --subrow-background-color: var(--p-800);
+  --subrow-background-color-hover: var(--p-700)
+  //other
+  --focus-color: var(--p-500);
+  --focus-visible-color: var(--p-400);
+  
+  //pagination
+  --pagination-background-active-color: var(--p-700);
+  --pagination-active-color: var(--p-200);
+
+  --pagination-arrow-color: currentColor;
+
+  // Inputfield
+  --input-label-font-weight: 500;
+  --input-label-color: $primary-300;
+  --input-field-background-color: var(--w)
+  --input-field-border-color: $primary-500;
+  --input-field-border-color-hover: var(--p-400);
+  --input-field-color: var(--n-200);
+  --input-field-placeholder: var(--n-500);
+  --input-field-icon: var(--p-300);
+}
+
+// DARK THEME
+@mixin dark-theme {
+  // table
+  --table-border-color: var(--n-300);
+
+  // th
+  --th-background-color: var(--n-200);
+  --th-background-color-hover: var(--n-300);
+  --th-color: var(--p-500);
+  --th-color-hover: var(--p-600);
+  --th-border-color: var(--table-border-color);
+  --th-sort-arrow-stroke: currentColor;
+  --th-ellipsis-fill: currentColor;
+
+  //td
+  --td-background-color: var(--n-100);
+  --td-background-color-hover: var(--n-200);
+  --td-color: var(--p-800);
+  --td-border-color: var(--table-border-color);
+  --td-edit-active: var(--n-100);
+
+  //context button
+  --table-context-button: var(--p-500);
+  --table-context-button-hover: var(--p-600);
+  --table-context-button-active: var(--p-700);
+  --table-context-button-bkg: transparent;
+  --table-context-button-bkg-hover: var(--p-300);
+  --table-context-button-bkg-active: var(--p-200);
+
+  //context menu
+    --context-menu-color: var(--n-800);
+    --context-menu-bkg: var(--n-200);
+    --context-menu-item-bkg-hover: hsla(0, 0%, 100%, .05);
+
+  //checkbox
+  --table-checkbox-color: var(--p-400);
+  --table-checkbox-hover-color: var(--p-300);
+  --table-checkbox-color: var(--p-400);
+  --table-checkbox-hover-color: var(--p-300);
+
+  //fold arrow
+  --fold-icon-color: var(--p-400);
+  
+  //subrow
+  --subrow-background-color: var(--p-200);
+  --subrow-background-color-hover: var(--p-300);
+
+  //other
+  --focus-color: var(--p-500);
+  --focus-visible-color: var(--p-400);
+  
+  //pagination
+  --pagination-background-active-color: var(--p-200);
+  --pagination-active-color: var(--p-500);
+  --pagination-arrow-color: currentColor;
+
+  // Inputfield
+  --input-label-color: $primary-300;
+  --input-field-color: var(--n-900);
+  --input-field-background-color: var(--n-100);
+  --input-field-border-color: var(--n-300);
+  --input-field-border-color-hover: var(--p-400);
+  --input-field-placeholder: var(--n-500);
+  --input-field-icon: var(--p-400);
+}
+
+
+:root {
+  // table
+  --table-border-radius: 6px;
+  --tablet-max-width: #{$tablet-max-width};
+  --mobile-max-width: #{$mobile-max-width};
+  
+  // tr
+  --tr-border-color: var(--table-border-color);
+
+  // th
+  --th-height: 44px;
+
+  --cell-padding-horizontal: 24px;
+
+  --th-font-family: 'inter';
+  --th-font-size: 14px;
+  --th-font-weight: 600;
+
+  --th-sort-descend-icon-path: "M8 3, 8 3, 8 3M8 2V14M12 10, 8 14, 4 10";
+  --th-sort-ascend-icon-path: "M12 6, 8 2, 4 6M8 2V14M8 13, 8 13, 8 13";
+  --th-sort-stroke-width: 2px;
+  
+  //td
+  --td-height: 44px;
+  --td-font-family: 'inter';
+  --td-font-size: 16px;
+  --td-font-weight: 400;
+  --td-button-cell-size: 3rem;
+
+  //context button
+  --table-context-button-radius: 50%;
+
+  // context menu
+  --context-menu-padding: 8px 0;
+  --context-menu-radius: 4px;
+  --context-menu-item-padding: 0 16px;
+  --context-menu-item-height: 40px;
+  --context-menu-shadow: 0 1px 2px rgba(0, 0, 0, 0.24),
+  0 2px 4px rgba(0, 0, 0, 0.12),
+  0 4px 8px rgba(0, 0, 0, 0.06),
+  0 8px 16px rgba(0, 0, 0, 0.03);
+
+  //checkbox
+  --table-checkbox-size: 20px;
+  --table-checkbox-radius: 3px;
+  --table-check-size: 12px;
+
+  //fold arrow
+  --fold-icon-size: 10px;
+  --fold-icon-stroke-width: 3;
+  --fold-arrow-path: path("M4 0, 12 8, 4 16");  
+
+  // inputfield
+  --input-field-border-radius: 4px;
+
+  //Pagination
+  --pagination-arrow-path: path("M4 2, 11 8, 4 14");
+  --pagination-double-arrow-path: path("M0 2, 7 8, 0 14M9 2, 15 8, 9 14");
+
+
+  @if (variable-exists(tablet-max-width) and $tablet-max-width == true) {
+    
+  }
+  @if (variable-exists(light-theme) and $light-theme == true and not variable-exists(dark-theme))
+    or (variable-exists(light-theme) and variable-exists(dark-theme) and $light-theme == true and $dark-theme == false) {
+    color-scheme: light;
+    @include light-theme();
+  }
+  @else if (variable-exists(dark-theme) and $dark-theme == true and not variable-exists(light-theme))
+  or (variable-exists(dark-theme) and variable-exists(light-theme) and $dark-theme == true and $light-theme == false) {
+    color-scheme: dark;
+    @include dark-theme();
+  }
+  @else if variable-exists(dark-theme) and variable-exists(light-theme) and $dark-theme == true and $light-theme == true {
+    color-scheme: light dark;
+    @media (prefers-color-scheme: light) {
+      @include light-theme();
+    }
+    @media (prefers-color-scheme: dark) {
+      @include dark-theme();
+    }
+  }
+  @else { @include dark-theme(); }
+  
+  @if variable-exists(theme) {
+    --n-100: hsl(325, 12%, 10%);
+    --n-200: hsl(325, 8%, 15%);
+    --n-300: hsl(325, 9%, 26%);
+    --n-400: hsl(325, 10%, 40%);
+    --n-500: hsl(325, 10%, 65%);
+    --n-600: hsl(325, 10%, 85%);
+    --n-700: hsl(325, 10%, 90%);
+    --n-800: hsl(325, 10%, 95%);
+    --n-900: hsl(325, 10%, 98%);
+    --w: #fff;
+    --b: #000;
+    --warning: hsl(40, 100%, 50%);
+    --error: hsl(0, 81%, 56%);
+    --ok: hsl(120, 50%, 50%);
+
+
+    @if $theme == 'blue' {
+      // BLUE
+      --p-100: hsl(215, 33%, 7%);
+      --p-200: hsl(215, 33%, 15%);
+      --p-300: hsl(215, 33%, 25%);
+      --p-400: hsl(215, 33%, 40%);
+      --p-500: hsl(215, 33%, 65%);
+      --p-600: hsl(215, 33%, 85%);
+      --p-700: hsl(215, 33%, 90%);
+      --p-800: hsl(215, 33%, 95%);
+      --p-900: hsl(215, 33%, 98%);
+    } 
+    @else if $theme == 'green' {
+      // GREEN
+      --p-100: hsl(1230, 33%, 7%);
+      --p-200: hsl(1230, 33%, 15%);
+      --p-300: hsl(1230, 33%, 25%);
+      --p-400: hsl(1230, 33%, 40%);
+      --p-500: hsl(1230, 33%, 65%);
+      --p-600: hsl(1230, 33%, 85%);
+      --p-700: hsl(1230, 33%, 90%);
+      --p-800: hsl(1230, 33%, 95%);
+      --p-900: hsl(1230, 33%, 98%);
+    } 
+    @else if $theme == 'purple' {
+      // PURPLE
+      --p-100: hsl(325, 33%, 7%);
+      --p-200: hsl(325, 33%, 15%);
+      --p-300: hsl(325, 33%, 25%);
+      --p-400: hsl(325, 33%, 40%);
+      --p-500: hsl(325, 33%, 65%);
+      --p-600: hsl(325, 33%, 85%);
+      --p-700: hsl(325, 33%, 90%);
+      --p-800: hsl(325, 33%, 95%);
+      --p-900: hsl(325, 33%, 98%);
+    }
+    @else if $theme == 'red' {
+      // REED
+      --p-100: hsl(0, 33%, 7%);
+      --p-200: hsl(0, 33%, 15%);
+      --p-300: hsl(0, 33%, 25%);
+      --p-400: hsl(0, 33%, 40%);
+      --p-500: hsl(0, 33%, 65%);
+      --p-600: hsl(0, 33%, 85%);
+      --p-700: hsl(0, 33%, 90%);
+      --p-800: hsl(0, 33%, 95%);
+      --p-900: hsl(0, 33%, 98%);
+    }
+  }
+}
+
+// Primary nuance
+$pink-100: hsl(331, 72%, 44%);
+$pink-200: hsl(331, 80%, 52%);
+$pink-300: hsl(331, 100%, 60%);
+$pink-400: hsl(330, 62%, 95%);
+
+// Complementary nuances
+$green-100: hsl(158, 87%, 30%);
+$green-200: hsl(158, 67%, 42%);
+$green-300: hsl(158, 64%, 51%);
+$green-400: hsl(158, 87%, 94%);
+
+$blue-100: #005e75;
+$blue-200: #018eb2;
+$blue-300: hsl(192, 96%, 44%);
+$blue-400: hsl(191, 85%, 95%);
+
+// functional colors
+$neutral-100: hsl(222, 23%, 22%);
+
+// on page (colors used by customer but not in their specifications)
+
+// alerts & notifications
+$orange: hsl(7, 100%, 60%);
+$yellow: hsl(43, 96%, 58%);
+$green: hsl(150, 48%, 53%);
+
+// common colors (Legacy)
+$black: hsl(222, 32%, 14%);
+$neutral-100: hsl(222, 23%, 22%);
+$neutral-200: hsl(0, 0%, 48%);
+$neutral-300: hsl(0, 0%, 67%);
+$neutral-400: hsl(0, 0%, 84%);
+$neutral-500: hsl(0, 0%, 96%);
+$white: hsl(0, 0%, 100%);
+
+// primary
+$primary: $pink-300;
+$primary-light: $pink-400;
+$primary-hover: $pink-200;
+$primary-active: $pink-100;
+
+// secondary
+$secondary: $green-300;
+$secondary-light: $green-400;
+$secondary-hover: $green-200;
+$secondary-active: $green-100;
+
+// tertiary
+$tertiary: $blue-300;
+$tertiary-light: $blue-400;
+$tertiary-hover: $blue-200;
+$tertiary-active: $blue-100;
+
+$base-color: $neutral-100;
+
+:root {
+  --th-sort-descend-icon-path: "M3 4, 3 1.5, 3 4M3 1.5V14.5M0.5 12, 3 14.5, 5.5 12M8 4h7.5M8 7h5.5M8 10h3.5M8 13h2";
+  --th-sort-ascend-icon-path: "M0.5 4, 3 1.5, 5.5 4M3 1.5V14.5M3 12, 3 14.5, 3 12M8 4h2M8 7h3.5M8 10h5.5M8 13h7.5";
+  --sort-arrow-stroke-width: 1.5;
+}
+  /*
+  --tablet-max-width: calc(64rem - 1px);
+  --mobile-max-width: 40rem;
+  // table
+  --table-border-radius: 1rem;
+ 
+  // th
+  --th-height: 3rem;
+
+  --cell-padding-horizontal: 2rem;
+
+  --td-font-family: $main-font;
+  --th-font-size: 1rem;
+  --th-font-weight: 400;
+
+  --th-sort-descend-icon-path: "M3 4, 3 1.5, 3 4M3 1.5V14.5M0.5 12, 3 14.5, 5.5 12M8 4h7.5M8 7h5.5M8 10h3.5M8 13h2";
+  --th-sort-ascend-icon-path: "M0.5 4, 3 1.5, 5.5 4M3 1.5V14.5M3 12, 3 14.5, 3 12M8 4h2M8 7h3.5M8 10h5.5M8 13h7.5";
+  --sort-arrow-stroke-width: 1.5;
+
+  //td
+  --td-height: 3.5rem;
+
+  --td-font-family: $main-font;
+  --td-font-size: 1rem;
+  --td-font-weight: 400;
+
+  //context button
+  --table-context-button-radius: 50%;
+
+  // context menu
+  --context-menu-padding: 0.5rem 0;
+  --context-menu-radius: 0.25rem;
+  --context-menu-item-padding: 0.5rem 1.5rem;
+  --context-menu-item-height: 2.5rem;
+  --context-menu-shadow: 0px 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+
+  //checkbox
+  --table-checkbox-size: 1.5rem;
+  --table-checkbox-radius: 0.1875rem;
+  --table-check-size: 0.75rem;
+
+  //fold arrow
+  --fold-icon-size: 0.625rem;
+  --fold-icon-stroke-width: 3;
+  --fold-arrow-path: path("M4 0, 12 8, 4 16");  
+
+  // inputfield
+  --input-field-border-radius: 0.25rem;
+
+  //Pagination
+  --pagination-arrow-path: path("M4 2, 11 8, 4 14");
+  --pagination-double-arrow-path: path("M0 2, 7 8, 0 14M9 2, 15 8, 9 14");
+}
+*/
+/** COLORS **/
+/*
+// table
+--table-border-color: #{$neutral-400};
+
+// tr
+--row-padding: 0;
+
+// th
+--th-background-color: #{$white};
+--th-background-color-hover: hsl(0, 0%, 97%);
+--th-color:  #{$neutral-200};
+--th-color-hover: #{$neutral-200};
+--th-border-color: #{$neutral-400};
+--th-sort-arrow-stroke: currentColor;
+
+//td
+--td-background-color: #{$white};
+--td-background-color-hover: rgba(0,0,0,.03);
+--td-color:  #{$base-color};
+--td-border-color: #{$neutral-400};
+--td-edit-active: #{$white};
+--td-button-cell-size: 3rem;
+
+//context button
+--table-context-button: var(--p-400);
+--table-context-button-hover: var(--p-300);
+--table-context-button-active: var(--p-400);
+--table-context-button-bkg: transparent;
+--table-context-button-bkg-hover: var(--p-800);
+--table-context-button-bkg-active: var(--p-700);
+
+//context menu
+--context-menu-color: var(--p-200);
+--context-menu-bkg: var(--w);
+--context-menu-item-bkg-hover: hsl(0, 0%, 97%);
+
+//checkbox
+--table-checkbox-color: var(--p-400);
+--table-checkbox-hover-color: var(--p-300);
+
+//fold arrow
+--fold-icon-color: var(--p-400);
+
+//subrow
+--subrow-background-color: $neutral-500;
+
+//other
+--focus-color: var(--p-500);
+--focus-visible-color: var(--p-400);
+
+//pagination
+--pagination-background-active-color: var(--p-700);
+--pagination-active-color: var(--p-200);
+
+--pagination-arrow-color: currentColor;
+
+// Inputfield
+--input-label-font-weight: 500;
+--input-label-color: $primary-300;
+--input-field-background-color: var(--w)
+--input-field-border-color: $primary-500;
+--input-field-border-color-hover: var(--p-400);
+--input-field-color: var(--n-200);
+--input-field-placeholder: var(--n-500);
+--input-field-icon: var(--p-300);
+
+}
+*/

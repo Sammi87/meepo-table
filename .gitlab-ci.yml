@@ -1,0 +1,33 @@
+image: node:latest
+
+stages:
+  # - check
+  - release
+
+#build:
+ # stage: check
+ 
+ # script:
+  # - npm install
+  # - npm run build
+
+release:
+  stage: release
+  script:
+    - export COMMIT_MESSAGE=$(git log --format=%B -n 1 $CI_COMMIT_SHA)
+    - >
+      if [[ $COMMIT_MESSAGE == "release"* ]]; then
+        RELEASE_NAME=$(echo $COMMIT_MESSAGE | cut -d '$' -f 2)
+        if [[ -n $RELEASE_NAME ]]; then
+          curl --header "PRIVATE-TOKEN: $NEW_CI_TOKEN" \
+               --form "name=$RELEASE_NAME" --form "tag_name=$TAG_NAME" \
+               --request POST  "https://gitlab.com/api/v4/projects/40724347/releases"
+          echo "Release created with name: $RELEASE_NAME"
+        else
+          echo "No release name found after '$' symbol."
+        fi
+      else
+        echo "Commit does not start with 'release '. Skipping release creation."
+      fi
+  only:
+    - main

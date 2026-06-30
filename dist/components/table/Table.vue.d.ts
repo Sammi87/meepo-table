@@ -1,0 +1,65 @@
+import { CellId, RowId } from '../../types/tableTypes';
+declare const _default: <T, S>(__VLS_props: {
+    "onUpdate:allSelected"?: ((rowId: string[]) => any) | undefined;
+    "onUpdate:selected"?: ((rowId: string) => any) | undefined;
+    "onUpdate:cellValue"?: ((returnValue: {
+        cellId: CellId;
+        value: any;
+    }) => any) | undefined;
+} & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, __VLS_ctx?: {
+    attrs: any;
+    emit: {
+        (e: 'update:allSelected', rowId: RowId[]): void;
+        (e: 'update:selected', rowId: RowId): void;
+        (e: 'update:cellValue', returnValue: {
+            cellId: CellId;
+            value: any;
+        }): void;
+    };
+    slots: {};
+} | undefined, __VLS_expose?: ((exposed: import('vue').ShallowUnwrapRef<{}>) => void) | undefined, __VLS_setup?: Promise<{
+    props: {
+        "onUpdate:allSelected"?: ((rowId: string[]) => any) | undefined;
+        "onUpdate:selected"?: ((rowId: string) => any) | undefined;
+        "onUpdate:cellValue"?: ((returnValue: {
+            cellId: CellId;
+            value: any;
+        }) => any) | undefined;
+    } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps;
+    expose(exposed: import('vue').ShallowUnwrapRef<{}>): void;
+    attrs: any;
+    slots: {};
+    emit: {
+        (e: 'update:allSelected', rowId: RowId[]): void;
+        (e: 'update:selected', rowId: RowId): void;
+        (e: 'update:cellValue', returnValue: {
+            cellId: CellId;
+            value: any;
+        }): void;
+    };
+}>) => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    [key: string]: any;
+}> & {
+    __ctx?: {
+        props: {
+            "onUpdate:allSelected"?: ((rowId: string[]) => any) | undefined;
+            "onUpdate:selected"?: ((rowId: string) => any) | undefined;
+            "onUpdate:cellValue"?: ((returnValue: {
+                cellId: CellId;
+                value: any;
+            }) => any) | undefined;
+        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps;
+        expose(exposed: import('vue').ShallowUnwrapRef<{}>): void;
+        attrs: any;
+        slots: {};
+        emit: {
+            (e: 'update:allSelected', rowId: RowId[]): void;
+            (e: 'update:selected', rowId: RowId): void;
+            (e: 'update:cellValue', returnValue: {
+                cellId: CellId;
+                value: any;
+            }): void;
+        };
+    } | undefined;
+};
+export default _default;

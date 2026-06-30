@@ -1,0 +1,55 @@
+:root {
+  // table
+  --table-border-radius: 6px;
+
+  // th
+  --th-height: 44px;
+
+  --cell-padding-horizontal: 24px;
+
+  --th-font-family: 'inter';
+  --th-font-size: 14px;
+  --th-font-weight: 600;
+
+  --th-sort-descend-icon-path: "M8 3, 8 3, 8 3M8 2V14M12 10, 8 14, 4 10";
+  --th-sort-ascend-icon-path: "M12 6, 8 2, 4 6M8 2V14M8 13, 8 13, 8 13";
+  --th-sort-stroke-width: 2px;
+
+  //td
+  --td-height: 44px;
+
+  --td-font-family: 'inter';
+  --td-font-size: 16px;
+  --td-font-weight: 400;
+
+  //context button
+  --table-context-button-radius: 50%;
+
+  // context menu
+  --context-menu-padding: 8px 0;
+  --context-menu-radius: 4px;
+  --context-menu-item-padding: 0 16px;
+  --context-menu-item-height: 40px;
+  --context-menu-shadow: 0 1px 2px rgba(0, 0, 0, 0.24),
+  0 2px 4px rgba(0, 0, 0, 0.12),
+  0 4px 8px rgba(0, 0, 0, 0.06),
+  0 8px 16px rgba(0, 0, 0, 0.03);
+
+  //checkbox
+  --table-checkbox-size: 20px;
+  --table-checkbox-radius: 3px;
+  --table-check-size: 12px;
+
+  //fold arrow
+  --fold-icon-size: 10px;
+  --fold-icon-stroke-width: 3;
+  --fold-arrow-path: path("M4 0, 12 8, 4 16");  
+
+  // inputfield
+  --input-field-border-radius: 4px;
+
+  //Pagination
+  --pagination-arrow-path: path("M4 2, 11 8, 4 14");
+  --pagination-double-arrow-path: path("M0 2, 7 8, 0 14M9 2, 15 8, 9 14");
+
+}

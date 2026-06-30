@@ -1,0 +1,131 @@
+// LIGHT THEME
+@mixin light-theme() {
+  // table
+  --table-border-color: var(--p-500);
+
+  // th
+  --th-background-color: var(--p-700);
+  --th-background-color-hover: var(--p-600);
+  --th-color: var(--p-300);
+  --th-color-hover: var(--p-300);
+  --th-border-color: var(--table-border-color);
+  --th-sort-arrow-stroke: currentColor;
+  --th-ellipsis-fill: currentColor;
+
+  //td
+  --td-background-color: var(--n-900);
+  --td-background-color-hover: var(--n-800);
+  --td-color: var(--p-200);
+  --td-border-color: var(--table-border-color);
+  --td-edit-active: var(--n-900);
+
+  //context button
+  --table-context-button: var(--p-400);
+  --table-context-button-hover: var(--p-300);
+  --table-context-button-active: var(--p-400);
+  --table-context-button-bkg: transparent;
+  --table-context-button-bkg-hover: var(--p-800);
+  --table-context-button-bkg-active: var(--p-700);
+
+  //context menu
+  --context-menu-color: var(--p-200);
+  --context-menu-bkg: var(--w);
+  --context-menu-item-bkg-hover: hsl(0, 0%, 97%);
+
+  //checkbox
+  --table-checkbox-color: var(--p-400);
+  --table-checkbox-hover-color: var(--p-300);
+
+  //fold arrow
+  --fold-icon-color: var(--p-400);
+
+  //subrow
+  --subrow-background-color: var(--p-800);
+  --subrow-background-color-hover: var(--p-900);
+
+  //other
+  --focus-color: var(--p-500);
+  --focus-visible-color: var(--p-400);
+  
+  //pagination
+  --pagination-background-active-color: var(--p-700);
+  --pagination-active-color: var(--p-200);
+
+  --pagination-arrow-color: currentColor;
+
+  // Inputfield
+  --input-label-font-weight: 500;
+  --input-label-color: $primary-300;
+  --input-field-background-color: var(--w)
+  --input-field-border-color: $primary-500;
+  --input-field-border-color-hover: var(--p-400);
+  --input-field-color: var(--n-200);
+  --input-field-placeholder: var(--n-500);
+  --input-field-icon: var(--p-300);
+}
+
+// DARK THEME
+@mixin dark-theme {
+  // table
+  --table-border-color: var(--n-300);
+  
+  // th
+  --th-background-color: var(--n-200);
+  --th-background-color-hover: var(--n-300);
+  --th-color: var(--p-500);
+  --th-color-hover: var(--p-600);
+  --th-border-color: var(--table-border-color);
+  --th-sort-arrow-stroke: currentColor;
+  --th-ellipsis-fill: currentColor;
+
+  //td
+  --td-background-color: var(--n-100);
+  --td-background-color-hover: var(--n-200);
+  --td-color: var(--p-800);
+  --td-border-color: var(--table-border-color);
+  --td-edit-active: var(--n-100);
+
+  //context button
+  --table-context-button: var(--p-500);
+  --table-context-button-hover: var(--p-600);
+  --table-context-button-active: var(--p-700);
+  --table-context-button-bkg: transparent;
+  --table-context-button-bkg-hover: var(--p-300);
+  --table-context-button-bkg-active: var(--p-200);
+
+  //context menu
+    --context-menu-color: var(--n-800);
+    --context-menu-bkg: var(--n-200);
+    --context-menu-item-bkg-hover: hsla(0, 0%, 100%, .05);
+
+  //checkbox
+  --table-checkbox-color: var(--p-400);
+  --table-checkbox-hover-color: var(--p-300);
+  --table-checkbox-color: var(--p-400);
+  --table-checkbox-hover-color: var(--p-300);
+
+  //fold arrow
+  --fold-icon-color: var(--p-400);
+  
+  //subrow
+  --subrow-background-color: var(--p-200);
+  --subrow-background-color-hover:var(--p-300)
+
+  //other
+  --focus-color: var(--p-500);
+  --focus-visible-color: var(--p-400);
+  
+  //pagination
+  --pagination-background-active-color: var(--p-200);
+  --pagination-active-color: var(--p-500);
+  --pagination-arrow-color: currentColor;
+
+  // Inputfield
+  --input-label-color: $primary-300;
+  --input-field-color: var(--n-900);
+  --input-field-background-color: var(--n-100);
+  --input-field-border-color: var(--n-300);
+  --input-field-border-color-hover: var(--p-400);
+  --input-field-placeholder: var(--n-500);
+  --input-field-icon: var(--p-400);
+}
