@@ -10,6 +10,31 @@ export const formatDate = (date: Date, locale: string = 'sv-SE'): string => {
 
 export const formatNumber = (number: number, locale: string = 'sv-SE'): string => new Intl.NumberFormat(locale).format(number);
 
+// --- Sort comparators -------------------------------------------------------
+// Pure, side-effect-free comparators a column can own. Keeping them here makes
+// them trivially unit-testable in isolation from the table/Vue.
+
+/** Coerce a date-ish value (Date | number | string) to a sortable timestamp. */
+export const toTime = (value: unknown): number => {
+  const t = value instanceof Date ? value.getTime()
+    : typeof value === 'number' ? value
+    : Date.parse(String(value));
+  return Number.isNaN(t) ? -Infinity : t; // invalid/empty dates sort first
+};
+
+/** Compare two date-ish values chronologically. */
+export const compareDates = (a: unknown, b: unknown): number => toTime(a) - toTime(b);
+
+/** Compare two number-ish values numerically (not lexically: 999 < 1000). */
+export const compareNumbers = (a: unknown, b: unknown): number => {
+  const na = Number(a), nb = Number(b);
+  return (Number.isNaN(na) ? -Infinity : na) - (Number.isNaN(nb) ? -Infinity : nb);
+};
+
+/** Locale-aware string comparison; the fallback for untyped columns. */
+export const compareStrings = (a: unknown, b: unknown, locale = 'sv'): number =>
+  String(a ?? '').localeCompare(String(b ?? ''), locale, { numeric: true, sensitivity: 'base' });
+
 export const getCssVar = (variable: string) => getComputedStyle(document.body).getPropertyValue(variable);
 
 export const isObject = (input: any): boolean => {

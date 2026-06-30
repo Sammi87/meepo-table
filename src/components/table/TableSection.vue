@@ -208,6 +208,9 @@ $easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
   border: 1px solid var(--table-border-color);
   @media only screen and (min-width: calc($tablet-max-width + 1px)) {
     grid-template-columns: v-bind(grid);
+    // Constrain the height and scroll inside the table so the header can stick.
+    max-height: var(--ez-table-max-height, 70vh);
+    overflow: auto;
   }
   grid-template-rows: auto;
   grid-auto-flow: row;
@@ -263,6 +266,15 @@ $easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
   }
 }
 .ez-th {
+  // CSS-only sticky headers. The header *cells* are the sticky elements, not
+  // <thead> — it is `display: contents` (no box, so it can't be made sticky).
+  // Scoped to the desktop grid layout; on tablet/mobile the header is hidden or
+  // restructured into per-row cards, so sticky does not apply there.
+  @media only screen and (min-width: calc($tablet-max-width + 1px)) {
+    position: sticky;
+    top: 0;
+    z-index: 2; // sit above body cells (whose tooltips use z-index: 1)
+  }
   font-family: var(--th-font-family);
   background: var(--th-background-color);
   color: var(--th-color);
